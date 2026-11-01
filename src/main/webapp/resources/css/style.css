@@ -1,0 +1,317 @@
+/* ==========================================
+   Trajecto Modern Design System (Jost Font)
+   ================================---------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #38bdf8;
+  --primary-hover: #0ea5e9;
+  --dark: #090d16;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --white: #ffffff;
+  --gray-border: rgba(255, 255, 255, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--dark);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gray-border);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Translucent Navbar */
+.trajecto-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 16, 28, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.85rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 13, 22, 0.45) 0%,
+      rgba(9, 13, 22, 0.82) 100%
+    ),
+    url("../images/train-bg.jpg") no-repeat center 35% / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 5rem 2rem 3rem 2rem;
+}
+
+.hero-content {
+  max-width: 1000px;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.gradient-text {
+  color: var(--primary);
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Glassmorphism Search Widget */
+.search-widget {
+  background: rgba(10, 16, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.25rem;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto;
+  gap: 0.85rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  color: var(--white);
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.search-field label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.search-field input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--white);
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-field input::placeholder {
+  color: #64748b;
+}
+
+.search-field input:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-swap {
+  color: var(--text-muted);
+  cursor: pointer;
+  padding-top: 1.2rem;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.search-swap:hover {
+  color: var(--white);
+}
+
+.search-btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Footer */
+.trajecto-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 16, 28, 0.92);
+  backdrop-filter: blur(10px);
+  color: var(--text-muted);
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  z-index: 100;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--white);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 968px) {
+  html,
+  body {
+    overflow: auto;
+  }
+  .search-widget {
+    grid-template-columns: 1fr;
+  }
+  .search-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+  .trajecto-footer {
+    position: relative;
+  }
+}
